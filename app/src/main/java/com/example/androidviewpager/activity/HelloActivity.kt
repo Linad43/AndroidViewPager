@@ -1,17 +1,17 @@
-package com.example.androidviewpager
+package com.example.androidviewpager.activity
 
 import android.annotation.SuppressLint
-import android.content.ClipData.Item
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.example.androidviewpager.data.ItemsPageBank
+import com.example.androidviewpager.R
+import com.example.androidviewpager.service.ViewPagerAdapter
 
-class MainActivity : AppCompatActivity() {
+class HelloActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
     private lateinit var adapter: ViewPagerAdapter
     @SuppressLint("MissingInflatedId")
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        adapter = ViewPagerAdapter(this, Items.listItems)
+        adapter = ViewPagerAdapter(this, ItemsPageBank.listItems)
         viewPager = findViewById(R.id.view_pager)
         viewPager.adapter = adapter
     }

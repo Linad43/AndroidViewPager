@@ -1,14 +1,15 @@
-package com.example.androidviewpager
+package com.example.androidviewpager.service
 
-import android.widget.ArrayAdapter
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.androidviewpager.data.ItemsPageBank
+import com.example.androidviewpager.fragment.ViewPagerFragment
 
 class ViewPagerAdapter(
     fragment: FragmentActivity,
-    private val viewPagerList:ArrayList<Items>
+    private val viewPagerList:ArrayList<ItemsPageBank>
 ):FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
         return viewPagerList.size
